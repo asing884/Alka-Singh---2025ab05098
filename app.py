@@ -1,4 +1,6 @@
 
+import os
+from pathlib import Path
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -15,6 +17,18 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="Bank Marketing — ML Models", layout="wide")
 
 st.title("📊 Bank Marketing — Model Inference & Evaluation")
+
+with st.expander("🔧 Debug (show files)", expanded=False):
+    st.write("CWD:", os.getcwd())
+    try:
+        st.write("Repo files:", os.listdir("."))
+        if os.path.isdir("model"):
+            st.write("model/ files:", os.listdir("model"))
+        else:
+            st.warning("No 'model' directory found at app root.")
+    except Exception as e:
+        st.error(f"Could not list files: {e}")
+
 st.write(
     "Upload **test data** (CSV) and choose a trained model. "
     "If your CSV includes a **`y`** column (0/1 or 'no'/'yes'), the app will compute evaluation metrics."
