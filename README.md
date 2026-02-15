@@ -41,3 +41,5 @@ Build and compare multiple ML classifiers on the UCI Bank Marketing dataset to p
 | Naive Bayes (Multinomial) | Very fast and OHE‑friendly; reasonable recall but typically lower precision/AUC vs linear/ensemble models. |
 | Random Forest (Ensemble)  | Robust, captures interactions; usually strong F1/AUC out‑of‑the‑box; useful feature importance. |
 | XGBoost (Ensemble)        | Often best F1/AUC; models subtle interactions; benefits from tuning; strong precision–recall balance. |
+## Live Streamlit App
+https://alka-singh---2025ab05098-mahgwmexmvjwm7nhcek7fk.streamlit.app/
