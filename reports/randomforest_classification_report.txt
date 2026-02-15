@@ -1,11 +1,11 @@
 Random Forest — Classification Report
-Generated: 2026-02-15 11:05:48
+Generated: 2026-02-15 11:26:20
 
               precision    recall  f1-score   support
 
-          no       0.94      0.94      0.94      7310
-         yes       0.51      0.52      0.51       928
+          no       0.95      0.88      0.91      7310
+         yes       0.40      0.64      0.50       928
 
-    accuracy                           0.89      8238
-   macro avg       0.72      0.73      0.73      8238
-weighted avg       0.89      0.89      0.89      8238
+    accuracy                           0.85      8238
+   macro avg       0.68      0.76      0.70      8238
+weighted avg       0.89      0.85      0.87      8238
