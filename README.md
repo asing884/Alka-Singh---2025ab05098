@@ -1,15 +1,15 @@
 # ML Assignment 2 — Bank Marketing (BITS WILP)
 
-**Student:** ALKA SINGH  
-**Assignment:** Machine Learning Assignment - 2  
-**Dataset:** UCI Bank Marketing (bank-additional-full.csv)  
+**Student:** ALKA SINGH
+**Assignment:** Machine Learning Assignment - 2
+**Dataset:** UCI Bank Marketing (bank-additional-full.csv)
 **Task:** Classification — Predict if client subscribes to term deposit (y: yes/no)
 
-> Dataset source & details: UCI ML Repository — Bank Marketing. (We used `bank-additional-full.csv` from `bank-additional.zip`).  
-> Note: The `duration` field is excluded for realistic modeling as commonly recommended in docs based on the UCI description.  
-> References:  
-> - UCI dataset page: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing  
-> - UCI (beta) dataset page variant with the same description: https://archive-beta.ics.uci.edu/dataset/222/bank+marketing  
+> Dataset source & details: UCI ML Repository — Bank Marketing. (We used `bank-additional-full.csv` from `bank-additional.zip`).
+> Note: The `duration` field is excluded for realistic modeling as commonly recommended in docs based on the UCI description.
+> References:
+> - UCI dataset page: https://archive.ics.uci.edu/ml/datasets/Bank+Marketing
+> - UCI (beta) dataset page variant with the same description: https://archive-beta.ics.uci.edu/dataset/222/bank+marketing
 > - Duration leakage note (derivative documentation): https://docs.1010data.com/Tutorials/MachineLearningExamples/BankMarketingDataSet_3.html
 
 ---
@@ -18,16 +18,16 @@
 Build and compare multiple ML classifiers on the Bank Marketing dataset to predict whether a client subscribes to a term deposit.
 
 ## 2) Dataset Description
-- **Source:** UCI Bank Marketing (bank-additional-full.csv inside bank-additional.zip)  
-- **Rows:** ~41,188; **Features:** 20 (mix of categorical & numeric); **Target:** y (0=no, 1=yes)  
+- **Source:** UCI Bank Marketing (bank-additional-full.csv inside bank-additional.zip)
+- **Rows:** ~41,188; **Features:** 20 (mix of categorical & numeric); **Target:** y (0=no, 1=yes)
 - **Note:** The `duration` column is dropped to avoid information leakage.
 
 ## 3) Models Used (All on the same dataset)
-1. Logistic Regression  
-2. Decision Tree Classifier  
-3. K-Nearest Neighbors (KNN)  
-4. Naive Bayes (Multinomial)  
-5. Random Forest (Ensemble)  
+1. Logistic Regression
+2. Decision Tree Classifier
+3. K-Nearest Neighbors (KNN)
+4. Naive Bayes (Multinomial)
+5. Random Forest (Ensemble)
 6. XGBoost (Ensemble)
 
 ### 3.1 Comparison Table (fill from `metrics_summary.md`)
@@ -41,3 +41,14 @@ Build and compare multiple ML classifiers on the Bank Marketing dataset to predi
 |4|Random Forest|0\.8947560087399854|0\.7797993124675692|0\.5658747300215983|0\.2823275862068966|0\.3767074047447879|0\.34981969052018386|
 |1|Decision Tree|0\.8470502549162418|0\.6222374876173404|0\.32452431289640593|0\.3308189655172414|0\.327641408751334|0\.24137501776047923|
 |3|Naive Bayes|0\.8976693372177713|0\.6801583358884854|0\.6470588235294118|0\.20150862068965517|0\.3073130649137223|0\.3222971458261065|
+
+### 3.2 Observations — Model-by-Model (Fill after reviewing metrics)
+
+| **ML Model Name**            | **Observation about model performance** |
+|-----------------------------|-----------------------------------------|
+| Logistic Regression         | Strong linear baseline; good AUC and stable precision/recall with class weighting; may underfit complex non-linear patterns. |
+| Decision Tree               | Interpretable but higher variance; without pruning can overfit; generally lower AUC/F1 than ensembles. |
+| kNN                         | Sensitive to scaling and high-dimensional one-hot space; moderate metrics; inference is costlier. |
+| Naive Bayes (Multinomial)   | Very fast and OHE-friendly; reasonable recall but typically lower precision/AUC vs linear/ensemble models. |
+| Random Forest (Ensemble)    | Robust, captures interactions well; usually strong F1/AUC out-of-the-box; useful feature importance. |
+| XGBoost (Ensemble)          | Often best F1/AUC; models subtle interactions; benefits from tuning; strong precision-recall balance. |
