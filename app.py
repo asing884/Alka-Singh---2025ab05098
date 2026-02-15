@@ -65,11 +65,11 @@ uploaded = st.file_uploader(
 
 # === Model selector (maps to pickles under model/) ===
 MODEL_FILES = {
-    "Logistic Regression":       "logistic_regression.pkl",
-    "Decision Tree":             "decision_tree.pkl",
+    "Logistic Regression":       "logisticregression.pkl",
+    "Decision Tree":             "decisiontree.pkl",
     "KNN":                       "knn.pkl",
-    "Naive Bayes":               "naive_bayes.pkl",
-    "Random Forest":             "random_forest.pkl",
+    "Naive Bayes":               "naivebayes.pkl",
+    "Random Forest":             "randomforest.pkl",
     "XGBoost":                   "xgboost.pkl",
 }
 
